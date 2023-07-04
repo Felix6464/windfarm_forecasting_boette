@@ -1,5 +1,5 @@
 from LSTM_enc_dec import *
-from neural_networks.utility_functions import *
+from utility_functions import *
 from plots import *
 from data_preprocessing import *
 

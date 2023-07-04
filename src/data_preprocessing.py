@@ -1,4 +1,4 @@
-from neural_networks import utility_functions as ut
+import utility_functions as ut
 import torch
 import pandas as pd
 import xgboost as xgb

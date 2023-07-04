@@ -2,7 +2,7 @@ from LSTM_enc_dec import *
 from data_preprocessing import *
 
 # Specify the model number of the model to be tested
-model_num = "2t"
+model_num = "1tb"
 saved_model = torch.load(f"./trained_models/britain/model_{model_num}.pt")
 
 # Load the hyperparameters of the model
@@ -18,7 +18,7 @@ loss_type = params["loss_type"]
 
 
 # Load the test data
-data = pd.read_csv('./preprocessed_data/filtered_dataset_britain_2018time_lag_corr.csv')
+data = pd.read_csv('./preprocessed_data/filtered_dataset_britain_eval_time_lag_corr.csv')
 data = np.array(data).T
 data = torch.from_numpy(data)
 
@@ -50,5 +50,6 @@ model.to(device)
 
 # Evaluate the model one time over whole test data
 loss_test = model.evaluate_model(X_test, Y_test, input_window, batch_size, loss_type)
+print(f"Test loss: {loss_test}")
 
 

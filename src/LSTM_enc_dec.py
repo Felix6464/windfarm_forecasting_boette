@@ -256,7 +256,7 @@ class LSTM_Sequence_Prediction(nn.Module):
                 input_test_batch = input_test_batch.to(device)
                 target_test_batch = target_test_batch.to(device)
 
-                Y_test_pred = self.predict(input_test_batch, target_len=target_len)
+                Y_test_pred = self.predict(input_test_batch.float(), target_len=target_len)
                 Y_test_pred = Y_test_pred.to(device)
                 loss_test = criterion(Y_test_pred, target_test_batch)
                 batch_loss_test += loss_test.item()
