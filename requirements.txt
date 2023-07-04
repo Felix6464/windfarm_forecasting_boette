@@ -1,0 +1,8 @@
+fuzzywuzzy==0.18.0
+matplotlib==3.6.2
+numpy==1.23.1
+pandas==1.5.1
+seaborn==0.12.2
+torch==1.13.0
+tqdm==4.64.1
+xgboost==1.7.5
