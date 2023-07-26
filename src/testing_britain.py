@@ -1,55 +1,88 @@
-from LSTM_enc_dec import *
-from data_preprocessing import *
-
-# Specify the model number of the model to be tested
-model_num = "1tb"
-saved_model = torch.load(f"./trained_models/britain/model_{model_num}.pt")
-
-# Load the hyperparameters of the model
-params = saved_model["hyperparameters"]
-
-hidden_size = params["hidden_size"]
-num_layers = params["num_layers"]
-learning_rate = params["learning_rate"]
-input_window = params["input_window"]
-output_window = params["output_window"]
-batch_size = params["batch_size"]
-loss_type = params["loss_type"]
+from src.models.LSTM_enc_dec_old import *
+from src.plots.plots import *
+from utility_functions import *
+import torch.utils.data as datat
+from torch.utils.data import DataLoader
+from data_preprocessing import normalize_data
 
 
-# Load the test data
-data = pd.read_csv('./preprocessed_data/filtered_dataset_britain_eval_time_lag_corr.csv')
-data = np.array(data).T
-data = torch.from_numpy(data)
+def main():
 
-# Calculate the mean and standard deviation along the feature dimension
-data = normalize_data(data)
+    data = torch.load("./synthetic_data/lim_integration_130k[-1].pt")
+    print("Data shape : {}".format(data.shape))
 
-# Specify the number of features and the stride for generating timeseries data
-num_features = 11
-stride = 1
+    # Calculate the mean and standard deviation along the feature dimension
+    data = normalize_data(data)
+    data = data[:, :30000]
 
-input_data_test, target_data_test = dataloader_seq2seq_feat(data,
-                                                            input_window=input_window,
-                                                            output_window=output_window,
-                                                            stride=stride,
-                                                            num_features=num_features)
+    index_train = int(0.9 * len(data[0, :]))
+    data = data[:, index_train:]
+
+    model_num = [("3561908np", "model")]
+
+    id = ["horizon_eval_test"]
+
+    loss_list = []
+    loss_list_eval = []
+    horizon = True
+
+    for m in range(len(model_num)):
+        saved_model = torch.load(f"./trained_models/lstm/model_{model_num[m][0]}.pt")
+
+        # Load the hyperparameters of the model
+        params = saved_model["hyperparameters"]
+        print("Hyperparameters of model {} : {}".format(model_num[m][0], params))
+        wandb.init(project=f"ML-Climate-SST-{'Horizon'}", config=params, name=params['name'])
+
+        hidden_size = params["hidden_size"]
+        num_layers = params["num_layers"]
+        input_window = params["input_window"]
+        batch_size = params["batch_size"]
+        loss_type = params["loss_type"]
+        shuffle = params["shuffle"]
+        loss_eval = params["loss_test"]
 
 
-# Specify the device to be used for testing
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        if horizon is True:
 
-# convert windowed data from np.array to PyTorch tensor
-X_test = torch.from_numpy(input_data_test)
-Y_test = torch.from_numpy(target_data_test)
+            # Specify the number of features and the stride for generating timeseries raw_data
+            num_features = 30
+            x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+            losses = []
 
-# Initialize the model and load the saved state dict
-model = LSTM_Sequence_Prediction(input_size = X_test.shape[2], hidden_size = hidden_size, num_layers=num_layers)
-model.load_state_dict(saved_model["model_state_dict"])
-model.to(device)
+            for output_window in x:
 
-# Evaluate the model one time over whole test data
-loss_test = model.evaluate_model(X_test, Y_test, input_window, batch_size, loss_type)
-print(f"Test loss: {loss_test}")
+                test_dataset = TimeSeriesLSTMnp(data.permute(1, 0),
+                                                input_window,
+                                                output_window)
+
+                test_dataloader = DataLoader(test_dataset,
+                                             batch_size=batch_size,
+                                             shuffle=shuffle,
+                                             drop_last=True)
+
+                # Specify the device to be used for testing
+                device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+                # Initialize the model and load the saved state dict
+                model = LSTM_Sequence_Prediction(input_size = num_features, hidden_size = hidden_size, num_layers=num_layers)
+                model.load_state_dict(saved_model["model_state_dict"])
+                model.to(device)
+
+                loss = model.evaluate_model(test_dataloader, output_window, batch_size, loss_type)
+                print("Output window: {}, Loss: {}".format(output_window, loss))
+                losses.append(loss)
+                wandb.log({"Horizon": output_window, "Test Loss": loss})
+
+            loss_list.append((losses, model_num[m][1]))
+        loss_list_eval.append((loss_eval, model_num[m][1]))
+        wandb.finish()
+
+    if horizon is True: plot_loss_horizon(loss_list, loss_type, id)
+    plot_loss_combined(loss_list_eval, id, loss_type)
 
 
+
+
+if __name__ == "__main__":
+    main()

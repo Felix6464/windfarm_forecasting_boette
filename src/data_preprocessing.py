@@ -1,8 +1,7 @@
-import utility_functions as ut
 import torch
 import pandas as pd
 import xgboost as xgb
-from plots import *
+from src.plots.plots import *
 
 
 
@@ -51,22 +50,25 @@ def get_data_variables(xarray_data):
 
 def normalize_data(data):
     """
-    Normalize the data using mean and standard deviation.
+    Normalize the raw_data using mean and standard deviation.
 
     Args:
-        data (torch.Tensor): Input data to be normalized.
+        data (torch.Tensor): Input raw_data to be normalized.
 
     Returns:
-        torch.Tensor: Normalized data.
+        torch.Tensor: Normalized raw_data.
 
     """
-
     # Calculate the mean and standard deviation along the feature dimension
     mean = torch.mean(data, dim=1, keepdim=True)
     std = torch.std(data, dim=1, keepdim=True)
 
     # Apply normalization using the mean and standard deviation
-    normalized_data = (data - mean) / std
+    normalized_data = torch.zeros_like(data)
+
+    for i in range(len(mean)):
+        normalized_data[i, :] = (data[i, :] - mean[i]) / std[i]
+
 
     return normalized_data
 
@@ -323,3 +325,37 @@ def feature_selection_func(data, target, target_variable, feature_selection_type
         print("Invalid feature selection type. Please choose between 'pearson', 'xgboost', 'time_lag_corr', and 'spearman'.")
 
     return top_features
+
+
+def dataloader_seq2seq_feat(y, input_window, output_window, num_features):
+    '''
+    Create a windowed dataset
+
+    :param y:                Time series feature (array)
+    :param input_window:     Number of y samples to give the model
+    :param output_window:    Number of future y samples to predict
+    :param stride:           Spacing between windows
+    :param num_features:     Number of features
+    :return X, Y:            Arrays with correct dimensions for LSTM
+                             (i.e., [input/output window size # examples, # features])
+    '''
+    data_len = y.shape[1]
+    num_samples = data_len - input_window - output_window * 2
+
+    # Initialize X and Y arrays with zeros
+    X = np.zeros([num_samples, input_window, num_features])
+    Y = np.zeros([num_samples, output_window, num_features])
+
+    for feature_idx in np.arange(num_features):
+        for sample_idx in np.arange(num_samples):
+            # Create input window
+            start_x = sample_idx
+            end_x = start_x + input_window
+            X[sample_idx, :, feature_idx] = y[feature_idx, start_x:end_x]
+
+            # Create output window
+            start_y = sample_idx + input_window
+            end_y = start_y + output_window
+            Y[sample_idx, :, feature_idx] = y[feature_idx, start_y:end_y]
+
+    return X, Y
