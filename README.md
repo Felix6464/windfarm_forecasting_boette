@@ -4,6 +4,22 @@
 ## Description
 This repository contains Python code for processing and analyzing wind farm data using machine learning techniques. The provided scripts and notebooks facilitate data preprocessing, feature selection, and LSTM-based time series prediction.
 
+## Download Raw Data
+
+### British Wind Farm Data
+Go to https://zenodo.org/record/5841834#.ZEajKXbP2BQ
+
+Download Kelmarsh_SCADA_2016_3082.zip. (Any other year is fine too) 
+
+Unzip the data and copy the corresponding turbine data into the folder /src/raw_data 
+
+### Brazilian Wind Farm Data
+
+Go to https://zenodo.org/record/1475197#.ZD6iMxXP2WC
+
+Download UEPS_v1.nc
+
+Copy the file into the folder /src/raw_data
 
 ## How to run
 First, install dependencies
