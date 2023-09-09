@@ -62,4 +62,4 @@ for column in data.columns:
             break  # Skip checking remaining terms if a match is found
 
 # Print the matching column names
-#print("Matching Column Names for the following terms : {} + {}:".format(terms, matching_columns))
+print("Matching Column Names for the following terms : {} + {}:".format(terms, matching_columns))
