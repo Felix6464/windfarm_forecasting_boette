@@ -4,7 +4,7 @@ from src.data_preprocessing import *
 
 
 # Load data to be used for training
-data = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select")
+data = pd.read_csv("../preprocessed_data/filtered_dataset_britain_eval_own_select.csv")
 data = np.array(data).T
 data = torch.from_numpy(data)
 
@@ -13,10 +13,10 @@ data = normalize_data(data)
 
 num_features = 11
 
-model_num = 1
+model_num = "4672589np"
 
 
-saved_model = torch.load(f"./final_models/model_{model_num}.pt")
+saved_model = torch.load(f"../final_models/model_{model_num}.pt")
 
 params = saved_model["hyperparameters"]
 hidden_size = params["hidden_size"]

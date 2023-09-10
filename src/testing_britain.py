@@ -8,17 +8,19 @@ from data_preprocessing import normalize_data
 
 def main():
 
-    data = torch.load("./synthetic_data/lim_integration_130k[-1].pt")
+    data = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select.csv")
     print("Data shape : {}".format(data.shape))
+
+    data = np.array(data).T
+    data = torch.from_numpy(data)
 
     # Calculate the mean and standard deviation along the feature dimension
     data = normalize_data(data)
-    data = data[:, :30000]
 
     index_train = int(0.9 * len(data[0, :]))
     data = data[:, index_train:]
 
-    model_num = [("3561908np", "model")]
+    model_num = [("4672589np", "model")]
 
     id = ["horizon_eval_test"]
 
@@ -27,12 +29,12 @@ def main():
     horizon = True
 
     for m in range(len(model_num)):
-        saved_model = torch.load(f"./trained_models/lstm/model_{model_num[m][0]}.pt")
+        saved_model = torch.load(f"./final_models/model_{model_num[m][0]}.pt")
 
         # Load the hyperparameters of the model
         params = saved_model["hyperparameters"]
         print("Hyperparameters of model {} : {}".format(model_num[m][0], params))
-        wandb.init(project=f"ML-Climate-SST-{'Horizon'}", config=params, name=params['name'])
+        wandb.init(project=f"Windfarm-{'Horizon'}", config=params, name=params['name'])
 
         hidden_size = params["hidden_size"]
         num_layers = params["num_layers"]
