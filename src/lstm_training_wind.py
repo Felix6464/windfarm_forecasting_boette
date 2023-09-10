@@ -4,7 +4,7 @@ from data_preprocessing import normalize_data
 from torch.utils.data import DataLoader
 
 # Load data to be used for training
-data_ = pd.read_csv("./preprocessed_data/combined_dataset_britain_18-20.csv")
+data_ = pd.read_csv("preprocessed_data_old/combined_dataset_britain_18-20.csv")
 data_ = np.array(data_).T
 data_ = torch.from_numpy(data_)
 print("Data shape : {}".format(data_.shape))
