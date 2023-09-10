@@ -4,7 +4,7 @@ from data_preprocessing import normalize_data
 from torch.utils.data import DataLoader
 
 # Load data to be used for training
-data_ = pd.read_csv("preprocessed_data/filtered_dataset_britain_eval_own_select_no_minmax.csv")
+data_ = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select_no_minmax.csv")
 data_ = np.array(data_).T
 data_ = torch.from_numpy(data_)
 print("Data shape : {}".format(data_.shape))
@@ -19,7 +19,7 @@ windows = [(6,6)]
 data_sizes = [50000]
 
 dt = "np"
-model_label = "ENC-DEC-[6-6]"
+model_label = "ENC-DEC"
 name = "lstm-enc-dec-no_minmax"
 
 config = {
@@ -33,11 +33,11 @@ config = {
     "output_window": windows[0][1],
     "learning_rate": lr[0],
     "num_layers": 1,
-    "num_epochs": 40,
+    "num_epochs": 100,
     "batch_size": 256,
     "train_data_len": len(data_[0, :]),
     "training_prediction": "recursive",
-    "loss_type": "MSE",
+    "loss_type": "RMSE",
     "model_label": model_label,
     "teacher_forcing_ratio": 0.5,
     "dynamic_tf": True,
@@ -112,7 +112,7 @@ for window in windows:
 
             config["learning_rate"] = l
 
-            config["name"] = name + "-" + str(l) + "-" + str(window[0]) + "-" + str(window[1])+ str(data_len)
+            config["name"] = name + "-" + str(window[0]) + "-" + str(window[1])
             #config["name"] = str(window[0]) + "-" + str(window[1]) + str(data_len)
 
             print("Start training")

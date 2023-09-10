@@ -1,4 +1,4 @@
-from src.models.LSTM_enc_dec_old import *
+from src.models.LSTM_enc_dec import *
 from src.plots.plots import *
 from utility_functions import *
 import torch.utils.data as datat
@@ -8,7 +8,7 @@ from data_preprocessing import normalize_data
 
 def main():
 
-    data = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select.csv")
+    data = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select_no_minmax.csv")
     print("Data shape : {}".format(data.shape))
 
     data = np.array(data).T
