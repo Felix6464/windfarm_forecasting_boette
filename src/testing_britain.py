@@ -27,10 +27,11 @@ def main():
     
     #144-144
     #4040491np time lag min max normalized
-    model_num = [("4040491np", "time_lag"),
-                 ("8300243np", "own_select")]
+    model_num = [#("4040491np", "time_lag"),
+                 ("8300243np", "own_select"),
+                 ("8940283np", "own_select_minmax")]
 
-    id = ["horizon_eval_data"]
+    id = ["horizon_only_power"]
 
     loss_list = []
     loss_list_eval = []

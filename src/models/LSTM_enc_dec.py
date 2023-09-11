@@ -391,7 +391,6 @@ class LSTM_Sequence_Prediction(nn.Module):
 
         batch_loss_test /= eval_len
 
-
         return batch_loss_test
 
 
