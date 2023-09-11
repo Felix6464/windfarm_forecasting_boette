@@ -8,7 +8,7 @@ from data_preprocessing import normalize_data
 
 def main():
 
-    data = pd.read_csv("preprocessed_data/filtered_dataset_britain_eval_own_select.csv")
+    data = pd.read_csv("preprocessed_data/filtered_dataset_britain_eval_own_select_2020.csv")
     print("Data shape : {}".format(data.shape))
 
     data = np.array(data).T

@@ -88,5 +88,5 @@ Next, navigate to any file and run it.
 
 ### `global_model_approach.ipynb`
 
-- Appends three preprocessed datasets to create a larger dataset.
+- Appends two preprocessed datasets to create a larger dataset.
 - Increases variability in the data and potentially improves performance on unseen datasets.
