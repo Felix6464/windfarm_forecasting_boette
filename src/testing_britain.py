@@ -1,5 +1,5 @@
-from src.models.LSTM_enc_dec import *
-from src.plots.plots import *
+from models.LSTM_enc_dec import *
+from plots import *
 from utility_functions import *
 import torch.utils.data as datat
 from torch.utils.data import DataLoader
@@ -20,9 +20,17 @@ def main():
     index_train = int(0.9 * len(data[0, :]))
     data = data[:, index_train:]
 
-    model_num = [("4672589np", "model")]
+    model_num = [("8143199np", "2-1"),
+                 ("3183351np", "6-6"),
+                 ("8092051np", "36-36"),
+                 ("8300243np", "144-144")]
+    
+    #144-144
+    #4040491np time lag min max normalized
+    model_num = [("4040491np", "time_lag"),
+                 ("8300243np", "own_select")]
 
-    id = ["horizon_eval_test"]
+    id = ["horizon_eval_data"]
 
     loss_list = []
     loss_list_eval = []
@@ -33,8 +41,8 @@ def main():
 
         # Load the hyperparameters of the model
         params = saved_model["hyperparameters"]
-        print("Hyperparameters of model {} : {}".format(model_num[m][0], params))
-        wandb.init(project=f"Windfarm-{'Horizon'}", config=params, name=params['name'])
+        #print("Hyperparameters of model {} : {}".format(model_num[m][0], params))
+        #wandb.init(project=f"Windfarm-{'Horizon'}", config=params, name=params['name'])
 
         hidden_size = params["hidden_size"]
         num_layers = params["num_layers"]
@@ -49,7 +57,8 @@ def main():
 
             # Specify the number of features and the stride for generating timeseries raw_data
             num_features = 11
-            x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+            #x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+            x = range(1, 145)
             losses = []
 
             for output_window in x:
@@ -74,14 +83,14 @@ def main():
                 loss = model.evaluate_model(test_dataloader, output_window, batch_size, loss_type)
                 print("Output window: {}, Loss: {}".format(output_window, loss))
                 losses.append(loss)
-                wandb.log({"Horizon": output_window, "Test Loss": loss})
+                #wandb.log({"Horizon": output_window, "Test Loss": loss})
 
             loss_list.append((losses, model_num[m][1]))
         loss_list_eval.append((loss_eval, model_num[m][1]))
         wandb.finish()
 
     if horizon is True: plot_loss_horizon(loss_list, loss_type, id)
-    plot_loss_combined(loss_list_eval, id, loss_type)
+    #plot_loss_combined(loss_list_eval, id, loss_type)
 
 
 

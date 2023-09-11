@@ -1,0 +1,21 @@
+  0%|                                                                              | 0/40 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "lstm_training.py", line 136, in <module>
+    loss, loss_test = model.train_model(train_dataloader,
+  File "/mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/models/LSTM_enc_dec_input.py", line 310, in train_model
+    Y_test_pred = self.predict(input_eval, config["output_window"])
+  File "/mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/models/LSTM_enc_dec_input.py", line 434, in predict
+    encoder_output, encoder_hidden = self.encoder(input_tensor, encoder_hidden)
+  File "/mnt/qb/work/goswami/gkd235/path/to/conda/envs/felix_c/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/models/LSTM_enc_dec_input.py", line 107, in forward
+    lstm_out, hidden = self.lstms[i](x_input, encoder_hidden)
+  File "/mnt/qb/work/goswami/gkd235/path/to/conda/envs/felix_c/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/qb/work/goswami/gkd235/path/to/conda/envs/felix_c/lib/python3.8/site-packages/torch/nn/modules/rnn.py", line 810, in forward
+    self.check_forward_args(input, hx, batch_sizes)
+  File "/mnt/qb/work/goswami/gkd235/path/to/conda/envs/felix_c/lib/python3.8/site-packages/torch/nn/modules/rnn.py", line 731, in check_forward_args
+    self.check_hidden_size(hidden[0], self.get_expected_hidden_size(input, batch_sizes),
+  File "/mnt/qb/work/goswami/gkd235/path/to/conda/envs/felix_c/lib/python3.8/site-packages/torch/nn/modules/rnn.py", line 239, in check_hidden_size
+    raise RuntimeError(msg.format(expected_hidden_size, list(hx.size())))
+RuntimeError: Expected hidden[0] size (1, 256, 256), got [2, 256, 256]

@@ -312,7 +312,7 @@ class LSTM_Sequence_Prediction_Input(nn.Module):
                         loss_test = criterion(Y_test_pred, target_eval)
                         batch_loss_test += loss_test.item()
 
-                #batch_loss_test /= eval_len
+                batch_loss_test /= eval_len
                 losses_test[epoch] = batch_loss_test
 
                 for input_batch, target_batch, l in train_dataloader:
@@ -358,7 +358,7 @@ class LSTM_Sequence_Prediction_Input(nn.Module):
                     optimizer.step()
 
                 # Compute average loss for the epoch
-                #batch_loss /= train_len
+                batch_loss /= train_len
                 losses[epoch] = batch_loss
 
                 # Dynamic teacher forcing
@@ -407,7 +407,7 @@ class LSTM_Sequence_Prediction_Input(nn.Module):
                 loss_test = criterion(Y_test_pred[:, -1, :], target_batch[:, -1, :])
                 batch_loss_test += loss_test.item()
 
-        #batch_loss_test /= eval_len
+        batch_loss_test /= eval_len
 
 
         return batch_loss_test

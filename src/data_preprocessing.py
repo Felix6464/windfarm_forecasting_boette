@@ -1,7 +1,7 @@
 import torch
 import pandas as pd
 import xgboost as xgb
-from src.plots.plots import *
+from plots import *
 
 
 

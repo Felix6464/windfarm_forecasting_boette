@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "testing_britain.py", line 91, in <module>
+    main()
+  File "testing_britain.py", line 75, in main
+    loss = model.evaluate_model(test_dataloader, output_window, batch_size, loss_type)
+  File "/mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/models/LSTM_enc_dec.py", line 389, in evaluate_model
+    loss_test = criterion(Y_test_pred[:, -1, :], target_batch[:, -1, :])
+IndexError: index -1 is out of bounds for dimension 1 with size 0

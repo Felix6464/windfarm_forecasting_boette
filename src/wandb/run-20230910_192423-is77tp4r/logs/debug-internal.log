@@ -1,0 +1,440 @@
+2023-09-10 19:24:23,477 INFO    StreamThr :162676 [internal.py:wandb_internal():86] W&B internal server running at pid: 162676, started at: 2023-09-10 19:24:23.475954
+2023-09-10 19:24:23,478 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status
+2023-09-10 19:24:23,511 INFO    WriterThread:162676 [datastore.py:open_for_write():85] open: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/run-is77tp4r.wandb
+2023-09-10 19:24:23,512 DEBUG   SenderThread:162676 [sender.py:send():379] send: header
+2023-09-10 19:24:23,636 DEBUG   SenderThread:162676 [sender.py:send():379] send: run
+2023-09-10 19:24:24,092 INFO    SenderThread:162676 [dir_watcher.py:__init__():211] watching files in: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files
+2023-09-10 19:24:24,092 INFO    SenderThread:162676 [sender.py:_start_run_threads():1121] run started: is77tp4r with start time 1694366663.481294
+2023-09-10 19:24:24,099 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:24,101 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:24,131 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: check_version
+2023-09-10 19:24:24,131 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: check_version
+2023-09-10 19:24:24,214 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: run_start
+2023-09-10 19:24:24,223 DEBUG   HandlerThread:162676 [system_info.py:__init__():31] System info init
+2023-09-10 19:24:24,223 DEBUG   HandlerThread:162676 [system_info.py:__init__():46] System info init done
+2023-09-10 19:24:24,223 INFO    HandlerThread:162676 [system_monitor.py:start():181] Starting system monitor
+2023-09-10 19:24:24,224 INFO    SystemMonitor:162676 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-09-10 19:24:24,224 INFO    HandlerThread:162676 [system_monitor.py:probe():201] Collecting system info
+2023-09-10 19:24:24,224 INFO    SystemMonitor:162676 [interfaces.py:start():190] Started cpu monitoring
+2023-09-10 19:24:24,225 INFO    SystemMonitor:162676 [interfaces.py:start():190] Started disk monitoring
+2023-09-10 19:24:24,225 INFO    SystemMonitor:162676 [interfaces.py:start():190] Started gpu monitoring
+2023-09-10 19:24:24,225 INFO    SystemMonitor:162676 [interfaces.py:start():190] Started memory monitoring
+2023-09-10 19:24:24,226 INFO    SystemMonitor:162676 [interfaces.py:start():190] Started network monitoring
+2023-09-10 19:24:24,246 DEBUG   HandlerThread:162676 [system_info.py:probe():195] Probing system
+2023-09-10 19:24:24,260 DEBUG   HandlerThread:162676 [system_info.py:_probe_git():180] Probing git
+2023-09-10 19:24:24,320 DEBUG   HandlerThread:162676 [system_info.py:_probe_git():188] Probing git done
+2023-09-10 19:24:24,320 DEBUG   HandlerThread:162676 [system_info.py:probe():240] Probing system done
+2023-09-10 19:24:24,320 DEBUG   HandlerThread:162676 [system_monitor.py:probe():210] {'os': 'Linux-3.10.0-1160.76.1.el7.x86_64-x86_64-with-glibc2.17', 'python': '3.8.13', 'heartbeatAt': '2023-09-10T17:24:24.246724', 'startedAt': '2023-09-10T17:24:23.443945', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'lstm_training.py', 'codePath': 'src/lstm_training.py', 'git': {'remote': 'https://github.com/Felix6464/windfarm_forecasting_boette.git', 'commit': 'cf6ac5132ad8a3336b6112e83efb80a8429c1f95'}, 'email': 'felix.boette@student.uni-tuebingen.de', 'root': '/mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette', 'host': 'slurm-bm-23.novalocal', 'username': 'gkd235', 'executable': '/mnt/qb/work/goswami/gkd235/path/to/conda/envs/felix_c/bin/python3', 'cpu_count': 36, 'cpu_count_logical': 72, 'cpu_freq': {'current': 3269.2540138888867, 'min': 1000.0, 'max': 3900.0}, 'cpu_freq_per_core': [{'current': 2912.463, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 2799.951, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3300.146, 'min': 1000.0, 'max': 3900.0}, {'current': 3300.146, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3122.253, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3300.146, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3300.146, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 2883.74, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3264.758, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 2799.951, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3187.316, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.511, 'min': 1000.0, 'max': 3900.0}, {'current': 3302.685, 'min': 1000.0, 'max': 3900.0}, {'current': 3018.469, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3300.939, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.829, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.67, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.987, 'min': 1000.0, 'max': 3900.0}, {'current': 3299.67, 'min': 1000.0, 'max': 3900.0}], 'disk': {'total': 1676.225757598877, 'used': 436.01860427856445}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 376.36548614501953}}
+2023-09-10 19:24:24,321 INFO    HandlerThread:162676 [system_monitor.py:probe():211] Finished collecting system info
+2023-09-10 19:24:24,321 INFO    HandlerThread:162676 [system_monitor.py:probe():214] Publishing system info
+2023-09-10 19:24:24,321 DEBUG   HandlerThread:162676 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-09-10 19:24:24,324 DEBUG   HandlerThread:162676 [system_info.py:_save_pip():67] Saving pip packages done
+2023-09-10 19:24:24,325 DEBUG   HandlerThread:162676 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-09-10 19:24:25,095 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/requirements.txt
+2023-09-10 19:24:25,096 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:25,096 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/conda-environment.yaml
+2023-09-10 19:24:26,836 DEBUG   HandlerThread:162676 [system_info.py:_save_conda():86] Saving conda packages done
+2023-09-10 19:24:26,841 INFO    HandlerThread:162676 [system_monitor.py:probe():216] Finished publishing system info
+2023-09-10 19:24:26,862 DEBUG   SenderThread:162676 [sender.py:send():379] send: files
+2023-09-10 19:24:26,862 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-09-10 19:24:26,875 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-10 19:24:26,875 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: stop_status
+2023-09-10 19:24:27,089 DEBUG   SenderThread:162676 [sender.py:send():379] send: telemetry
+2023-09-10 19:24:27,103 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/conda-environment.yaml
+2023-09-10 19:24:27,103 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:27,104 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_created():271] file/dir created: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-metadata.json
+2023-09-10 19:24:27,420 INFO    wandb-upload_0:162676 [upload_job.py:push():131] Uploaded file /tmp/tmp02ej3p03wandb/wyckusaq-wandb-metadata.json
+2023-09-10 19:24:28,939 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:28,941 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:28,941 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:24:28,941 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:28,947 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:28,947 DEBUG   SenderThread:162676 [sender.py:send():379] send: telemetry
+2023-09-10 19:24:29,108 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:29,108 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:30,572 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:30,575 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:30,575 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:30,580 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:31,113 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:31,113 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:32,324 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:32,325 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:32,325 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:32,333 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:33,118 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:33,118 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:33,988 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:24:33,988 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:33,989 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:33,989 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:33,997 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:34,120 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:35,122 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:35,650 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:35,651 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:35,651 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:35,659 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:36,123 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:37,125 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:37,297 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:37,298 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:37,298 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:37,303 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:38,128 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:38,965 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:38,966 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:38,966 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:38,971 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:39,130 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:39,131 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:39,971 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:24:40,742 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:40,742 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:40,743 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:40,747 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:41,134 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:41,135 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:41,875 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-10 19:24:41,875 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: stop_status
+2023-09-10 19:24:42,418 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:42,419 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:42,419 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:42,432 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:43,139 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:43,139 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:44,122 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:44,125 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:44,126 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:44,131 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:44,141 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:45,132 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:24:45,142 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:45,764 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:45,765 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:45,765 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:45,773 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:46,146 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:47,148 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:47,428 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:47,428 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:47,429 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:47,433 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:48,151 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:49,152 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:49,293 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:49,293 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:49,293 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:49,298 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:50,155 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:50,299 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:24:50,929 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:50,929 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:50,930 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:50,934 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:51,157 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:51,158 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:52,583 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:52,584 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:52,584 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:52,592 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:53,162 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:53,162 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:54,283 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:54,285 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:54,286 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:54,292 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:55,167 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:55,167 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:55,944 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:24:55,944 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:56,146 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:56,146 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:56,151 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:56,168 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/config.yaml
+2023-09-10 19:24:56,168 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:56,875 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-10 19:24:56,878 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: stop_status
+2023-09-10 19:24:57,170 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:57,773 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:57,775 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:57,775 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:57,779 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:24:58,173 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:24:59,175 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:24:59,493 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:24:59,494 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:24:59,494 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:24:59,499 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:00,177 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:01,160 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:01,160 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:01,161 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:01,161 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:01,165 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:01,178 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:01,179 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:02,830 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:02,831 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:02,831 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:02,836 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:03,184 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:03,187 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:04,506 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:04,508 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:04,509 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:04,515 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:05,188 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:05,188 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:06,270 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:06,270 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:06,271 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:06,271 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:06,275 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:07,193 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:07,193 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:07,941 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:07,942 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:07,942 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:07,949 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:08,196 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:09,199 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:09,618 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:09,620 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:09,620 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:09,624 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:10,200 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:11,202 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:11,300 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:11,300 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:11,301 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:11,301 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:11,307 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:11,875 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-10 19:25:11,875 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: stop_status
+2023-09-10 19:25:12,205 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:12,982 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:12,982 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:12,983 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:12,988 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:13,207 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:13,208 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:14,856 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:14,856 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:14,856 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:14,862 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:15,213 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:15,214 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:16,520 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:16,522 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:16,523 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:16,523 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:16,528 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:17,219 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:17,219 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:18,181 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:18,181 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:18,182 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:18,190 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:18,220 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:19,223 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:19,865 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:19,866 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:19,866 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:19,938 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:20,225 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:21,227 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:21,605 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:21,606 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:21,606 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:21,606 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:21,611 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:22,229 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:23,231 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:23,429 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:23,430 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:23,431 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:23,443 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:24,226 DEBUG   SystemMonitor:162676 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-09-10 19:25:24,233 DEBUG   SenderThread:162676 [sender.py:send():379] send: stats
+2023-09-10 19:25:24,233 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:25,125 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:25,126 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:25,126 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:25,131 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:25,235 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:25,236 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:26,812 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:26,813 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:26,814 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:26,814 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:26,818 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:26,875 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: stop_status
+2023-09-10 19:25:26,875 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: stop_status
+2023-09-10 19:25:27,240 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:27,240 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:28,559 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:28,559 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:28,560 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:28,564 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:29,246 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:29,246 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:30,230 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:30,233 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:30,233 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:30,238 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:30,248 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:31,250 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:32,079 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:32,079 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:32,081 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:32,081 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:32,085 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:32,252 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:33,254 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:33,730 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:33,731 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:33,732 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:33,736 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:34,256 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:35,259 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:35,380 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: partial_history
+2023-09-10 19:25:35,381 DEBUG   SenderThread:162676 [sender.py:send():379] send: history
+2023-09-10 19:25:35,381 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: summary_record
+2023-09-10 19:25:35,385 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:35,954 DEBUG   SenderThread:162676 [sender.py:send():379] send: telemetry
+2023-09-10 19:25:35,955 DEBUG   SenderThread:162676 [sender.py:send():379] send: exit
+2023-09-10 19:25:35,955 INFO    SenderThread:162676 [sender.py:send_exit():584] handling exit code: 0
+2023-09-10 19:25:35,955 INFO    SenderThread:162676 [sender.py:send_exit():586] handling runtime: 71
+2023-09-10 19:25:35,960 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:35,961 INFO    SenderThread:162676 [sender.py:send_exit():592] send defer
+2023-09-10 19:25:35,961 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,961 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 0
+2023-09-10 19:25:35,961 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,961 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 0
+2023-09-10 19:25:35,961 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 1
+2023-09-10 19:25:35,962 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,962 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 1
+2023-09-10 19:25:35,962 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,962 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 1
+2023-09-10 19:25:35,962 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 2
+2023-09-10 19:25:35,962 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,962 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 2
+2023-09-10 19:25:35,962 INFO    HandlerThread:162676 [system_monitor.py:finish():190] Stopping system monitor
+2023-09-10 19:25:35,962 DEBUG   SystemMonitor:162676 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-09-10 19:25:35,963 INFO    HandlerThread:162676 [interfaces.py:finish():202] Joined cpu monitor
+2023-09-10 19:25:35,963 DEBUG   SystemMonitor:162676 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-09-10 19:25:35,963 INFO    HandlerThread:162676 [interfaces.py:finish():202] Joined disk monitor
+2023-09-10 19:25:35,975 INFO    HandlerThread:162676 [interfaces.py:finish():202] Joined gpu monitor
+2023-09-10 19:25:35,975 INFO    HandlerThread:162676 [interfaces.py:finish():202] Joined memory monitor
+2023-09-10 19:25:35,976 INFO    HandlerThread:162676 [interfaces.py:finish():202] Joined network monitor
+2023-09-10 19:25:35,976 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,976 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 2
+2023-09-10 19:25:35,976 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 3
+2023-09-10 19:25:35,976 DEBUG   SenderThread:162676 [sender.py:send():379] send: stats
+2023-09-10 19:25:35,976 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,977 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 3
+2023-09-10 19:25:35,977 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,977 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 3
+2023-09-10 19:25:35,977 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 4
+2023-09-10 19:25:35,977 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,977 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 4
+2023-09-10 19:25:35,978 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,978 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 4
+2023-09-10 19:25:35,978 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 5
+2023-09-10 19:25:35,978 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,978 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 5
+2023-09-10 19:25:35,978 DEBUG   SenderThread:162676 [sender.py:send():379] send: summary
+2023-09-10 19:25:35,981 INFO    SenderThread:162676 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-09-10 19:25:35,982 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,982 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 5
+2023-09-10 19:25:35,982 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 6
+2023-09-10 19:25:35,982 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:35,982 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 6
+2023-09-10 19:25:35,982 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:35,982 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 6
+2023-09-10 19:25:35,985 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: status_report
+2023-09-10 19:25:36,183 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 7
+2023-09-10 19:25:36,183 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:36,183 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 7
+2023-09-10 19:25:36,183 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:36,183 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 7
+2023-09-10 19:25:36,262 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/config.yaml
+2023-09-10 19:25:36,264 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:36,955 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-10 19:25:37,264 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:39,063 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 8
+2023-09-10 19:25:39,063 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: poll_exit
+2023-09-10 19:25:39,063 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:39,064 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 8
+2023-09-10 19:25:39,064 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:39,064 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 8
+2023-09-10 19:25:39,064 INFO    SenderThread:162676 [job_builder.py:build():281] Attempting to build job artifact
+2023-09-10 19:25:39,067 INFO    SenderThread:162676 [job_builder.py:_get_source_type():400] is repo sourced job
+2023-09-10 19:25:39,069 INFO    SenderThread:162676 [job_builder.py:build():374] adding wandb-job metadata file
+2023-09-10 19:25:39,087 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 9
+2023-09-10 19:25:39,087 DEBUG   SenderThread:162676 [sender.py:send():379] send: artifact
+2023-09-10 19:25:39,087 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:39,088 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 9
+2023-09-10 19:25:39,268 INFO    Thread-12 :162676 [dir_watcher.py:_on_file_modified():288] file/dir modified: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:39,732 INFO    SenderThread:162676 [sender.py:send_artifact():1475] sent artifact job-https___github.com_Felix6464_windfarm_forecasting_boette.git_src_lstm_training.py - {'id': 'QXJ0aWZhY3Q6NTY0MDkxMTU5', 'digest': 'b908cca961b03d941f1362ef61d92e9f', 'state': 'COMMITTED', 'aliases': [{'artifactCollectionName': 'job-https___github.com_Felix6464_windfarm_forecasting_boette.git_src_lstm_training.py', 'alias': 'latest'}, {'artifactCollectionName': 'job-https___github.com_Felix6464_windfarm_forecasting_boette.git_src_lstm_training.py', 'alias': 'v0'}], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjk2MzcwNzMx', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NTY0MDkxMTU5', 'versionIndex': 0}}, 'version': 'v0'}
+2023-09-10 19:25:39,733 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:39,733 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 9
+2023-09-10 19:25:39,733 INFO    SenderThread:162676 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-09-10 19:25:40,271 INFO    SenderThread:162676 [dir_watcher.py:finish():388] scan: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files
+2023-09-10 19:25:40,272 INFO    SenderThread:162676 [dir_watcher.py:finish():402] scan save: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/conda-environment.yaml conda-environment.yaml
+2023-09-10 19:25:40,272 INFO    SenderThread:162676 [dir_watcher.py:finish():402] scan save: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/config.yaml config.yaml
+2023-09-10 19:25:40,275 INFO    SenderThread:162676 [dir_watcher.py:finish():402] scan save: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log output.log
+2023-09-10 19:25:40,277 INFO    SenderThread:162676 [dir_watcher.py:finish():402] scan save: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/requirements.txt requirements.txt
+2023-09-10 19:25:40,279 INFO    SenderThread:162676 [dir_watcher.py:finish():402] scan save: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-metadata.json wandb-metadata.json
+2023-09-10 19:25:40,280 INFO    SenderThread:162676 [dir_watcher.py:finish():402] scan save: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json wandb-summary.json
+2023-09-10 19:25:40,282 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 10
+2023-09-10 19:25:40,282 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:40,284 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 10
+2023-09-10 19:25:40,285 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:40,285 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 10
+2023-09-10 19:25:40,285 INFO    SenderThread:162676 [file_pusher.py:finish():159] shutting down file pusher
+2023-09-10 19:25:40,690 INFO    wandb-upload_2:162676 [upload_job.py:push():131] Uploaded file /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/output.log
+2023-09-10 19:25:40,721 INFO    wandb-upload_4:162676 [upload_job.py:push():131] Uploaded file /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/wandb-summary.json
+2023-09-10 19:25:40,729 INFO    wandb-upload_3:162676 [upload_job.py:push():131] Uploaded file /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/requirements.txt
+2023-09-10 19:25:40,738 INFO    wandb-upload_1:162676 [upload_job.py:push():131] Uploaded file /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/config.yaml
+2023-09-10 19:25:40,744 INFO    wandb-upload_0:162676 [upload_job.py:push():131] Uploaded file /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/files/conda-environment.yaml
+2023-09-10 19:25:40,945 INFO    Thread-11 :162676 [sender.py:transition_state():612] send defer: 11
+2023-09-10 19:25:40,945 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:40,945 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 11
+2023-09-10 19:25:40,945 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:40,945 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 11
+2023-09-10 19:25:40,946 INFO    SenderThread:162676 [file_pusher.py:join():164] waiting for file pusher
+2023-09-10 19:25:40,946 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 12
+2023-09-10 19:25:40,946 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:40,946 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 12
+2023-09-10 19:25:40,946 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:40,946 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 12
+2023-09-10 19:25:40,946 INFO    SenderThread:162676 [file_stream.py:finish():593] file stream finish called
+2023-09-10 19:25:41,627 INFO    SenderThread:162676 [file_stream.py:finish():597] file stream finish is done
+2023-09-10 19:25:41,627 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 13
+2023-09-10 19:25:41,627 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:41,627 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 13
+2023-09-10 19:25:41,628 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:41,628 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 13
+2023-09-10 19:25:41,628 INFO    SenderThread:162676 [sender.py:transition_state():612] send defer: 14
+2023-09-10 19:25:41,628 DEBUG   SenderThread:162676 [sender.py:send():379] send: final
+2023-09-10 19:25:41,628 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: defer
+2023-09-10 19:25:41,628 DEBUG   SenderThread:162676 [sender.py:send():379] send: footer
+2023-09-10 19:25:41,628 INFO    HandlerThread:162676 [handler.py:handle_request_defer():170] handle defer: 14
+2023-09-10 19:25:41,629 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: defer
+2023-09-10 19:25:41,629 INFO    SenderThread:162676 [sender.py:send_request_defer():608] handle sender defer: 14
+2023-09-10 19:25:41,629 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: poll_exit
+2023-09-10 19:25:41,629 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: server_info
+2023-09-10 19:25:41,630 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: get_summary
+2023-09-10 19:25:41,630 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: sampled_history
+2023-09-10 19:25:41,630 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: poll_exit
+2023-09-10 19:25:41,630 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: job_info
+2023-09-10 19:25:41,631 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: server_info
+2023-09-10 19:25:41,776 DEBUG   SenderThread:162676 [sender.py:send_request():406] send_request: job_info
+2023-09-10 19:25:41,776 DEBUG   HandlerThread:162676 [handler.py:handle_request():144] handle_request: shutdown
+2023-09-10 19:25:41,776 INFO    HandlerThread:162676 [handler.py:finish():857] shutting down handler
+2023-09-10 19:25:42,631 INFO    WriterThread:162676 [datastore.py:close():294] close: /mnt/qb/home/goswami/gkd235/windfarm_forecasting_boette/src/wandb/run-20230910_192423-is77tp4r/run-is77tp4r.wandb
+2023-09-10 19:25:42,776 INFO    SenderThread:162676 [sender.py:finish():1552] shutting down sender
+2023-09-10 19:25:42,777 INFO    SenderThread:162676 [file_pusher.py:finish():159] shutting down file pusher
+2023-09-10 19:25:42,777 INFO    SenderThread:162676 [file_pusher.py:join():164] waiting for file pusher

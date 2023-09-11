@@ -1,4 +1,4 @@
-from src.models.LSTM_enc_dec_old import *
+from src.models.LSTM_enc_dec import *
 from src.utility_functions import *
 from src.data_preprocessing import *
 
@@ -13,7 +13,7 @@ data = normalize_data(data)
 
 num_features = 11
 
-model_num = "4672589np"
+model_num = "3183351np"
 
 
 saved_model = torch.load(f"../final_models/model_{model_num}.pt")
