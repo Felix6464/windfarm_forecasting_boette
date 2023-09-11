@@ -91,11 +91,14 @@ def dictionary_to_dataframe(data_dict):
     # Iterate over the dictionary items
     for category, values in data_dict.items():
         # Add a new column to the DataFrame with category as the column name
-        df[category] = values
+        if len(values) == 52560:
+            df[category] = values
+        else:
+            print("Category {} has wrong length {} and is not added to dataframe".format(category, len(values)))
 
     return df
 
-def remove_nan_columns(input_data, target_data):
+def remove_nan_columns(input_data, target_data, fill_nan_method='interpolate_spline'):
     """
     Remove columns with NaN values from the input data
 
@@ -107,16 +110,33 @@ def remove_nan_columns(input_data, target_data):
 
     """
 
-    # Forward fill NaN values in the target data and input data
-    input_data = input_data.ffill()
-    target_data = target_data.ffill()
-
     # Identify columns with NaN values in the input data
     nan_cols = show_nan(input_data)
 
     # Drop columns with NaN values from the input data
     for col_name in nan_cols:
         input_data = input_data.drop(columns=[col_name])
+
+    if fill_nan_method == "ffill":
+        # Forward fill NaN values in the target data and input data
+        input_data = input_data.ffill()
+        target_data = target_data.ffill()
+    elif fill_nan_method == "bfill":
+        # Backward fill NaN values in the target data and input data
+        input_data = input_data.bfill()
+        target_data = target_data.bfill()
+    elif fill_nan_method == "interpolate_spline":
+        # Interpolate NaN values in the target data and input data
+        print("starting interpolation")
+        input_data = input_data.interpolate(method="spline", order=3)
+        target_data = target_data.interpolate(method="spline", order=3)
+        print("finished interpolation")
+    else:
+        print("Choose an valid method to fill NaN values: [interpolate_spline, ffill, bfill]")
+        return 0
+
+
+
 
     # Return the input data and target data without the NaN columns
     return input_data, target_data
@@ -132,7 +152,8 @@ def show_nan(df: pd.DataFrame) -> list:
     """
     results = []
     for col in df.columns:
-        if df[col].isna().sum() > 0:
+        if df[col].isna().sum() > 5000:
+            print(f"Column {col} has {df[col].isna().sum()} > 5000 nan values and is consequently dropped.")
             results.append(col)
 
     return results
@@ -178,6 +199,10 @@ def df_shifted(df, target=None, lag=0):
         pd.DataFrame: A new DataFrame with shifted values.
 
     """
+    # Check if the input is a pandas DataFrame
+    if not isinstance(df, pd.DataFrame):
+        print("Df is of instance {}".format(type(df)))
+        raise ValueError("Input 'df' must be a pandas DataFrame.")
 
     # If no lag and no target variable specified, return the original DataFrame
     if not lag and not target:
