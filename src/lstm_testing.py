@@ -8,18 +8,20 @@ from data_preprocessing import normalize_data
 
 def main():
 
+    # Load the preprocessed data
     data = pd.read_csv("preprocessed_data/filtered_dataset_britain_eval_own_select_2020.csv")
-    print("Data shape : {}".format(data.shape))
-
     data = np.array(data).T
     data = torch.from_numpy(data)
+    print("Data shape : {}".format(data.shape))
 
     # Calculate the mean and standard deviation along the feature dimension
     data = normalize_data(data)
 
+    # Split the data into training and testing
     index_train = int(0.9 * len(data[0, :]))
     data = data[:, index_train:]
 
+    # Specify the model number to be used for testing
     model_num = [("8143199np", "2-1"),
                  ("3183351np", "6-6"),
                  ("8092051np", "36-36"),
@@ -42,9 +44,6 @@ def main():
 
         # Load the hyperparameters of the model
         params = saved_model["hyperparameters"]
-        #print("Hyperparameters of model {} : {}".format(model_num[m][0], params))
-        #wandb.init(project=f"Windfarm-{'Horizon'}", config=params, name=params['name'])
-
         hidden_size = params["hidden_size"]
         num_layers = params["num_layers"]
         input_window = params["input_window"]
@@ -58,7 +57,6 @@ def main():
 
             # Specify the number of features and the stride for generating timeseries raw_data
             num_features = 11
-            #x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
             x = range(1, 145)
             losses = []
 
@@ -84,16 +82,12 @@ def main():
                 loss = model.evaluate_model(test_dataloader, output_window, batch_size, loss_type)
                 print("Output window: {}, Loss: {}".format(output_window, loss))
                 losses.append(loss)
-                #wandb.log({"Horizon": output_window, "Test Loss": loss})
 
             loss_list.append((losses, model_num[m][1]))
         loss_list_eval.append((loss_eval, model_num[m][1]))
         wandb.finish()
 
     if horizon is True: plot_loss_horizon(loss_list, loss_type, id)
-    #plot_loss_combined(loss_list_eval, id, loss_type)
-
-
 
 
 if __name__ == "__main__":

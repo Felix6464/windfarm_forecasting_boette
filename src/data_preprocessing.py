@@ -135,9 +135,6 @@ def remove_nan_columns(input_data, target_data, fill_nan_method='interpolate_spl
         print("Choose an valid method to fill NaN values: [interpolate_spline, ffill, bfill]")
         return 0
 
-
-
-
     # Return the input data and target data without the NaN columns
     return input_data, target_data
 

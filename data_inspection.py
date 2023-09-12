@@ -15,13 +15,12 @@ if windfarm_type == "britain":
 else:
     # Load the input data from the NetCDF file
     data = xr.open_dataset('src/raw_data/UEPS_v1.nc')
-
+    # Print information about the input data
+    print("Input Data (Brazil Windfarm):\n{}".format(data))
     # Get the list of variables in the input data
     variable_list = dp.get_data_variables(data)
-    print("Variables in the input data:\n{}".format(variable_list))
     # Convert the dictionary of variables to a dataframe
     data = dp.dictionary_to_dataframe(variable_list)
-    print("Input Data (Brazil Windfarm):\n{}".format(data))
 
 # Store column names in a list
 column_names = data.columns.tolist()
