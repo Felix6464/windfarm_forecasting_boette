@@ -20,11 +20,19 @@ def main():
     data = normalize_data(data)
 
     # Specify the model number of the model to be tested
+    #britain 144-144
     model_num_lstm_base = "8763179np"
     model_num_lstm = "2383946np"
     model_num_gru = "9411715np"
     model_num_lstm_input = "7540309np"
     model_num_lstm_input_tf = "3365362np"
+
+    #brazil 144-144
+    model_num_lstm_base = "3944041np"
+    model_num_lstm = "1571176np"
+    model_num_gru = "1902029np"
+    model_num_lstm_input = "5308320np"
+    model_num_lstm_input_tf = "1232841np"
 
     # Specify the number of features and the stride for generating timeseries raw_data
     input_window = 144
@@ -42,7 +50,7 @@ def main():
     loss_list_temp = []
 
 
-    x = range(1, 40)
+    x = range(1, 145)
 
     for output_window in x:
         print("Output window : {}".format(output_window))
@@ -74,7 +82,7 @@ def main():
     loss_list.append(([lst[4] for lst in loss_list_temp], f"{'LSTM-Enc-Dec-Input-TF'}"))
 
     model_nums = str([model_num_gru, model_num_lstm_base, model_num_lstm, model_num_lstm_input, model_num_lstm_input_tf])
-    plot_loss_horizon_combined(loss_list, model_nums, loss_type, tau=[34, 35, 36])
+    plot_loss_horizon_combined(loss_list, model_nums, loss_type)
 
 
 

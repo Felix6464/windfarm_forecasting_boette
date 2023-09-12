@@ -9,7 +9,7 @@ from data_preprocessing import normalize_data
 def main():
 
     # Load the preprocessed data
-    data = pd.read_csv("preprocessed_data/filtered_dataset_britain_eval_own_select_2020.csv")
+    data = pd.read_csv("./preprocessed_data/filtered_concatenated_data_2019_2021.csv")
     data = np.array(data).T
     data = torch.from_numpy(data)
     print("Data shape : {}".format(data.shape))
@@ -22,18 +22,34 @@ def main():
     data = data[:, index_train:]
 
     # Specify the model number to be used for testing
+    # Britain windfarm models
     model_num = [("8143199np", "2-1"),
                  ("3183351np", "6-6"),
                  ("8092051np", "36-36"),
                  ("8300243np", "144-144")]
     
-    #144-144
-    #4040491np time lag min max normalized
-    model_num = [#("4040491np", "time_lag"),
-                 ("8300243np", "own_select"),
+    #144-144 - own selected features min-max normalized and not
+    model_num = [("8300243np", "own_select"),
                  ("8940283np", "own_select_minmax")]
 
-    id = ["horizon_only_power"]
+    
+    # Brazil windfarm models 
+    model_num = [("4459175np", "2-1"),
+                 ("4909119np", "6-6"),
+                 ("2248183np", "36-36"),
+                 ("8294622np", "144-144")]
+    
+        #144-144 - global model approach (double data over 2 years) and normal approach over 1 year
+    model_num = [("8294622np", "global"),
+                 ("2383946np", "standard")]
+    
+    # on global data 
+    model_num = [("4119988np", "288-288"),
+                 ("9522982np", "77-144"),
+                 ("8124366np", "288-144"),
+                 ("3932602np", "144-144")]
+
+    id = ["horizon_britain_ow__"]
 
     loss_list = []
     loss_list_eval = []

@@ -1,4 +1,4 @@
-from models.LSTM_enc_dec import *
+from models.LSTM import *
 from utility_functions import *
 from data_preprocessing import normalize_data
 from torch.utils.data import DataLoader
@@ -16,11 +16,11 @@ lr = [0.0005]
 windows = [(2,1), (2,2), (2,6), (2, 12), (2, 4), (6,1), (6,2), (6,6), (4, 6), (6, 4), (6, 12), (12,2), (12, 1), (12, 6)]
 windows = [(144,144)]
 
-data_sizes = [50000]
+data_sizes = [100000]
 
 dt = "np"
 model_label = "ENC-DEC"
-name = "lstm-enc-dec-brazil"
+name = "lstm-enc-dec-brazil-vanilla"
 
 config = {
     "wandb": True,
@@ -119,7 +119,7 @@ for window in windows:
 
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-            model = LSTM_Sequence_Prediction(input_size=config["num_features"],
+            model = LSTM_Sequence_Prediction_Base(input_size=config["num_features"],
                                              hidden_size=config["hidden_size"],
                                              num_layers=config["num_layers"],
                                              dropout=config["dropout"])
