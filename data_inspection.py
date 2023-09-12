@@ -1,10 +1,27 @@
 import pandas as pd
 from fuzzywuzzy import fuzz
+import xarray as xr
+import src.data_preprocessing as dp
 
 
+# Set the windfarm type to "brazil" or "britan"
+windfarm_type= "brazil"
 
-# Read the CSV file
-data = pd.read_csv('src/raw_data/Turbine_Data_Kelmarsh_2_2020-01-01_-_2021-01-01_229.csv')
+
+if windfarm_type == "britain":
+    # Read the CSV file
+    data = pd.read_csv('src/raw_data/Turbine_Data_Kelmarsh_2_2020-01-01_-_2021-01-01_229.csv')
+
+else:
+    # Load the input data from the NetCDF file
+    data = xr.open_dataset('src/raw_data/UEPS_v1.nc')
+
+    # Get the list of variables in the input data
+    variable_list = dp.get_data_variables(data)
+    print("Variables in the input data:\n{}".format(variable_list))
+    # Convert the dictionary of variables to a dataframe
+    data = dp.dictionary_to_dataframe(variable_list)
+    print("Input Data (Brazil Windfarm):\n{}".format(data))
 
 # Store column names in a list
 column_names = data.columns.tolist()
