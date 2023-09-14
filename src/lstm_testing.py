@@ -9,7 +9,7 @@ from data_preprocessing import normalize_data
 def main():
 
     # Load the preprocessed data
-    data = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
+    data = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select_2020.csv")
     data = np.array(data).T
     data = torch.from_numpy(data)
     print("Data shape : {}".format(data.shape))
@@ -52,7 +52,9 @@ def main():
                  ("2782815np", "36-36"),
                  ("8294622np", "144-144")]
     
-    id = ["horizon_britain_brazil"]
+    model_num = [("4030391np", "144-144")]
+    
+    id = ["horizon_britain_own_select"]
 
     loss_list = []
     loss_list_eval = []

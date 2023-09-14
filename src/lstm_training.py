@@ -4,7 +4,7 @@ from data_preprocessing import normalize_data
 from torch.utils.data import DataLoader
 
 # Load data to be used for training
-data_ = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
+data_ = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select_2020.csv")
 data_ = np.array(data_).T
 data_ = torch.from_numpy(data_)
 print("Data shape : {}".format(data_.shape))
@@ -14,13 +14,13 @@ lr = [0.0005, 0.0002, 0.0001, 0.000075, 0.00005]
 lr = [0.0005]
 
 windows = [(2,1), (2,2), (2,6), (2, 12), (2, 4), (6,1), (6,2), (6,6), (4, 6), (6, 4), (6, 12), (12,2), (12, 1), (12, 6)]
-windows = [(36,36)]
+windows = [(144,144)]
 
 data_sizes = [100000]
 
 dt = "np"
 model_label = "ENC-DEC"
-name = "lstm-enc-dec-brazil"
+name = "lstm-enc-dec-britain_own_select"
 
 config = {
     "wandb": True,
