@@ -10,7 +10,7 @@ import torch.nn as nn
 
 def main():
 
-    data = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_time_lag_corr_new144.csv")
+    data = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
     print("Data shape : {}".format(data.shape))
 
     data = np.array(data).T

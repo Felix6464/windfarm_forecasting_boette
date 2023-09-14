@@ -1,4 +1,4 @@
-from models.LSTM_enc_dec import *
+from models.LSTM_enc_dec_input import *
 from plots import *
 from utility_functions import *
 import torch.utils.data as datat
@@ -49,7 +49,9 @@ def main():
                  ("8124366np", "288-144"),
                  ("3932602np", "144-144")]
 
-    id = ["horizon_britain_ow__"]
+    id = ["horizon_britain_benchmark"]
+
+    model_num = [("2622473np", "144-144")]
 
     loss_list = []
     loss_list_eval = []
@@ -91,7 +93,7 @@ def main():
                 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
                 # Initialize the model and load the saved state dict
-                model = LSTM_Sequence_Prediction(input_size = num_features, hidden_size = hidden_size, num_layers=num_layers)
+                model = LSTM_Sequence_Prediction_Input(input_size = num_features, hidden_size = hidden_size, num_layers=num_layers)
                 model.load_state_dict(saved_model["model_state_dict"])
                 model.to(device)
 

@@ -166,7 +166,7 @@ def plot_loss_horizon_combined(loss_values, identifier, loss_type, tau=None):
     plt.title(f'{loss_type} per Horizon Length on Test Set', fontsize=16, fontweight='bold')
     plt.xlabel('Prediction Horizon', fontsize=12)
     plt.ylabel('Test Loss', fontsize=12)
-    plt.xticks(epochs, fontsize=10)
+    plt.xticks(fontsize=10)
     plt.yticks(fontsize=10)
     plt.grid(True, linestyle='--', alpha=0.5)
     plt.legend(fontsize=9)
