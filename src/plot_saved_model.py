@@ -4,7 +4,7 @@ from data_preprocessing import *
 
 
 # Load data to be used for training
-data = pd.read_csv("preprocessed_data/filtered_dataset_britain_eval_own_select_minmax_norm.csv")
+data = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
 data = np.array(data).T
 data = torch.from_numpy(data)
 
@@ -13,7 +13,7 @@ data = normalize_data(data)
 
 num_features = 11
 
-model_num = "3183351np"
+model_num = "8543434np"
 
 
 saved_model = torch.load(f"./final_models/model_{model_num}.pt")

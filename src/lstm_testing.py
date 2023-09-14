@@ -1,4 +1,4 @@
-from models.LSTM_enc_dec_input import *
+from models.LSTM_enc_dec import *
 from plots import *
 from utility_functions import *
 import torch.utils.data as datat
@@ -9,7 +9,7 @@ from data_preprocessing import normalize_data
 def main():
 
     # Load the preprocessed data
-    data = pd.read_csv("./preprocessed_data/filtered_concatenated_data_2019_2021.csv")
+    data = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
     data = np.array(data).T
     data = torch.from_numpy(data)
     print("Data shape : {}".format(data.shape))
@@ -33,12 +33,6 @@ def main():
                  ("8940283np", "own_select_minmax")]
 
     
-    # Brazil windfarm models 
-    model_num = [("4459175np", "2-1"),
-                 ("4909119np", "6-6"),
-                 ("2248183np", "36-36"),
-                 ("8294622np", "144-144")]
-    
         #144-144 - global model approach (double data over 2 years) and normal approach over 1 year
     model_num = [("8294622np", "global"),
                  ("2383946np", "standard")]
@@ -48,10 +42,17 @@ def main():
                  ("9522982np", "77-144"),
                  ("8124366np", "288-144"),
                  ("3932602np", "144-144")]
-
-    id = ["horizon_britain_benchmark"]
-
+    
+    #benchmark model - no loss normalization
     model_num = [("3432090np", "144-144")]
+
+        # Brazil windfarm models 
+    model_num = [("1219769np", "2-1"),
+                 ("8543434np", "6-6"),
+                 ("2782815np", "36-36"),
+                 ("8294622np", "144-144")]
+    
+    id = ["horizon_britain_brazil"]
 
     loss_list = []
     loss_list_eval = []
@@ -93,7 +94,7 @@ def main():
                 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
                 # Initialize the model and load the saved state dict
-                model = LSTM_Sequence_Prediction_Input(input_size = num_features, hidden_size = hidden_size, num_layers=num_layers)
+                model = LSTM_Sequence_Prediction(input_size = num_features, hidden_size = hidden_size, num_layers=num_layers)
                 model.load_state_dict(saved_model["model_state_dict"])
                 model.to(device)
 
