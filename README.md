@@ -57,6 +57,8 @@ Next, navigate to any file and run it.
 - Sets hyperparameters and initializes the model.
 - Uses teacher-forcing during training to learn temporal dependencies.
 - Saves model-related information for later evaluation and plotting.
+- in order to change the model that is being used you have to change the respective import of the model
+- and specify the class of model initalization in the main function (line 122)
 
 ### `LSTM_enc_dec.py`
 
@@ -76,15 +78,10 @@ Next, navigate to any file and run it.
 - Creates two plots showing the convergence of training and test loss over the specified range of epochs.
 - Imports `plots.py`, which contains individual functions for the plots.
 
-### `testing_britain.py`
+### `lstm_testing.py`
 
 - Loads a saved model and a preprocessed dataset (not the dataset the model was trained on).
 - Evaluates the trained model on an unseen dataset.
-
-### `transfer_learning.ipynb`
-
-- Loads a saved model and a preprocessed dataset.
-- Further trains the model on an unseen dataset using transfer learning.
 
 ### `global_model_approach.ipynb`
 

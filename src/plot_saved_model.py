@@ -4,7 +4,7 @@ from data_preprocessing import *
 
 
 # Load data to be used for training
-data = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
+data = pd.read_csv("preprocessed_data/filtered_dataset_brazil2_time_lag_corr_144.csv")
 data = np.array(data).T
 data = torch.from_numpy(data)
 

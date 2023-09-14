@@ -1,4 +1,7 @@
 from models.LSTM_enc_dec import *
+#from models.LSTM import *
+#from models.GRU_enc_dec import *
+#from models.LSTM_enc_dec_input import *
 from utility_functions import *
 from data_preprocessing import normalize_data
 from torch.utils.data import DataLoader
@@ -13,17 +16,16 @@ print("Data shape : {}".format(data_.shape))
 lr = [0.0005, 0.0002, 0.0001, 0.000075, 0.00005]
 lr = [0.0005]
 
-windows = [(2,1), (2,2), (2,6), (2, 12), (2, 4), (6,1), (6,2), (6,6), (4, 6), (6, 4), (6, 12), (12,2), (12, 1), (12, 6)]
 windows = [(144,144)]
 
 data_sizes = [100000]
 
 dt = "np"
 model_label = "ENC-DEC"
-name = "lstm-enc-dec-britain_own_select"
+name = "lstm-enc-dec-britain"
 
 config = {
-    "wandb": True,
+    "wandb": False,
     "name": name,
     "num_features": 11,
     "hidden_size": 256,
@@ -156,7 +158,7 @@ for window in windows:
 
             print(f"Model saved as model_{rand_identifier}.pt")
             print("Config : {}".format(config))
-            wandb.finish()
+            #wandb.finish()
 
             model_dict = {"training_params": config,
                           "models": (rand_identifier, l)}
