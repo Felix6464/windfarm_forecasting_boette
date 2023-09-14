@@ -51,7 +51,7 @@ def main():
 
     id = ["horizon_britain_benchmark"]
 
-    model_num = [("2622473np", "144-144")]
+    model_num = [("3432090np", "144-144")]
 
     loss_list = []
     loss_list_eval = []

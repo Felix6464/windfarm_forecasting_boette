@@ -1,10 +1,10 @@
-from models.LSTM_enc_dec_input import *
+from models.LSTM_enc_dec import *
 from utility_functions import *
 from data_preprocessing import normalize_data
 from torch.utils.data import DataLoader
 
 # Load data to be used for training
-data_ = pd.read_csv("./preprocessed_data/filtered_dataset_britain_eval_own_select_2019.csv")
+data_ = pd.read_csv("./preprocessed_data/filtered_dataset_brazil2_time_lag_corr.csv")
 data_ = np.array(data_).T
 data_ = torch.from_numpy(data_)
 print("Data shape : {}".format(data_.shape))
@@ -14,13 +14,13 @@ lr = [0.0005, 0.0002, 0.0001, 0.000075, 0.00005]
 lr = [0.0005]
 
 windows = [(2,1), (2,2), (2,6), (2, 12), (2, 4), (6,1), (6,2), (6,6), (4, 6), (6, 4), (6, 12), (12,2), (12, 1), (12, 6)]
-windows = [(144,144)]
+windows = [(36,36)]
 
 data_sizes = [100000]
 
 dt = "np"
 model_label = "ENC-DEC"
-name = "lstm-enc-dec-benchmark"
+name = "lstm-enc-dec-brazil"
 
 config = {
     "wandb": True,
@@ -119,7 +119,7 @@ for window in windows:
 
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-            model = LSTM_Sequence_Prediction_Input(input_size=config["num_features"],
+            model = LSTM_Sequence_Prediction(input_size=config["num_features"],
                                              hidden_size=config["hidden_size"],
                                              num_layers=config["num_layers"],
                                              dropout=config["dropout"])
